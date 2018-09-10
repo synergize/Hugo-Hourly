@@ -39,10 +39,11 @@ namespace historicalweather
 
                     var result = JsonConvert.DeserializeObject<GetWeather.RootObject>(openWeather);
                     GetWeather.RootObject openOutput = result;
-                    url = string.Format($"https://api.darksky.net/forecast/{darkAPI}/{openOutput.Coord.Lat},{openOutput.Coord.Lon},622425600");
+                    url = string.Format($"https://api.darksky.net/forecast/{darkAPI}/{openOutput.Coord.Lat},{openOutput.Coord.Lon},622440000");
                     var darkWeather = web.DownloadString(url);
                     var darkResult = JsonConvert.DeserializeObject<GetDarkSky.RootObject>(darkWeather);
-                    Console.WriteLine($"Date and Time Start: {DateTime("622436400")}"); 
+                    Console.WriteLine($"Hurrican Hugo Hourly Data Start Time: {DateTime("622440000")}");
+                   Console.WriteLine("\n");
                     for (int i = 0; i < darkResult.hourly.data.Count; i++)
                 {
                     Console.WriteLine($"Date and Timestamp Hourly: {DateTime(darkResult.hourly.data[i].time.ToString())}");
@@ -56,12 +57,15 @@ namespace historicalweather
                     Console.WriteLine("\n");
 
                 }
-                    
+                Console.WriteLine("Powered by Dark Sky, https://darksky.net/poweredby/ and OpenWeatherMap, https://openweathermap.org/");
+                Console.ReadLine();
 
 
 
 
-                
+
+
+
             }
         }
         static string Validation(string json)

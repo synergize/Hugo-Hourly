@@ -28,7 +28,7 @@ namespace historicalweather
             public int windBearing { get; set; }
             public int cloudCover { get; set; }
             public int uvIndex { get; set; }
-            public int visibility { get; set; }
+            public double visibility { get; set; }
         }
 
         public class Datum
@@ -95,7 +95,7 @@ namespace historicalweather
             public int uvIndex { get; set; }
             public int uvIndexTime { get; set; }
             public double visibility { get; set; }
-            public int temperatureMin { get; set; }
+            public double temperatureMin { get; set; }
             public int temperatureMinTime { get; set; }
             public double temperatureMax { get; set; }
             public int temperatureMaxTime { get; set; }
